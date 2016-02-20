@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!-- dpcontrols/DataGridEvents.mxml -->
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical">
+    <mx:Script>
+    <![CDATA[
+        import mx.events.ListEvent;
+        private function itemClickEvent(event:ListEvent):void {
+            clickColumn.text=String(event.columnIndex);
+            clickRow.text=String(event.rowIndex);
+            eventType.text=event.type;
+        }
+    ]]>
+    </mx:Script>
+    <mx:DataGrid id="myGrid" width="350" height="150"
+            itemClick="itemClickEvent(event);" editable="true" editedItemPosition="true">
+        <mx:ArrayCollection>
+            <mx:Object Artist="Pavement" Price="11.99" 
+                Album="Slanted and Enchanted" />
+            <mx:Object Artist="Pavement" Album="Brighten the Corners"
+                Price="11.99" />
+        </mx:ArrayCollection>
+    </mx:DataGrid> 
+
+    <mx:Form>
+        <mx:FormItem label="Column Index:">
+            <mx:Label id="clickColumn"/>                
+        </mx:FormItem>
+        <mx:FormItem label="Row Index:">
+            <mx:Label id="clickRow"/>               
+        </mx:FormItem>
+        <mx:FormItem label="Type:">
+            <mx:Label id="eventType"/>
+        </mx:FormItem>
+    </mx:Form>
+</mx:Application> 

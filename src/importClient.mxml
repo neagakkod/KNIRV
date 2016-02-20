@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" 
+	layout="horizontal" themeColor="#5EAA34" 
+	backgroundGradientAlphas="[1.0, 1.0]" 
+	backgroundGradientColors="[#719E53, #C3F3A6]" 
+	color="#757572" fontFamily="Verdana" fontSize="12" height="100%">	
+	<mx:VBox height="739" width="300">
+		<mx:LinkBar dataProvider="{boxStack}" width="290"/>
+		<mx:ViewStack id="boxStack" height="679" width="298">	
+		<mx:HBox id="tracker" label="Tracker">
+			<mx:Panel title="KNIRV Tracker" 
+				status="User Profile Type" width="298" height="283" layout="absolute" 
+			roundedBottomCorners="true" cornerRadius="20" alpha=".9" x="10" y="10">
+			<mx:ViewStack x="0" y="0" id="viewstack1" width="268" height="160">
+			<mx:Canvas label="rtuTracking" width="100%" height="100%" id="tracking_2">
+				<mx:ComboBox x="98" y="114" id="rtuName"></mx:ComboBox>
+				<mx:ComboBox x="64" y="63" id="assetCategory2" width="194"></mx:ComboBox>
+				<mx:Label x="151" y="42" text="Asset Category:"/>
+				<mx:Label x="184" y="95" text="RTU Name:"/>
+				<mx:TextInput x="10" y="10"/>
+				<mx:Button x="178" y="10" label="Search" width="80"/>
+			</mx:Canvas>
+			<mx:Canvas label="assetTracking" width="100%" height="100%" id="tracking_1">
+				<mx:TextInput x="10" y="10"/>
+				<mx:Button x="178" y="10" label="Search" width="80"/>
+				<mx:ComboBox x="64" y="63" id="assetCategory1" width="194"></mx:ComboBox>
+				<mx:Label x="151" y="42" text="Asset Category:"/>
+			</mx:Canvas>
+			</mx:ViewStack>
+				<mx:ControlBar>
+					<mx:SWFLoader width="266" height="66" id="rtuAd0"/>
+					<mx:Spacer width="100%"/>	
+				</mx:ControlBar>	
+			</mx:Panel>
+		</mx:HBox>
+		<mx:HBox id="query" label="Query">	
+			<mx:Panel title="KNIRV Query" status="User Status" width="298" height="446" layout="absolute" 
+				roundedBottomCorners="true" cornerRadius="20" alpha=".9">
+			<mx:SWFLoader x="10" y="10" width="63" height="58"/>
+			<mx:Image x="81" y="10" width="177" height="90"/>
+			<mx:TabNavigator x="9" y="108" width="249" height="344">
+				<mx:Canvas label="Alerts" width="100%" height="100%">
+				</mx:Canvas>
+				<mx:Canvas label="EPK" width="100%" height="100%">
+					<mx:DataGrid x="10" y="99" width="237" height="151">
+						<mx:columns>
+							<mx:DataGridColumn headerText="Description" dataField="col1"/>
+							<mx:DataGridColumn headerText="Site" dataField="col2"/>
+						</mx:columns>
+					</mx:DataGrid>
+					<mx:TextArea x="10" y="10" width="227" height="81">
+						<mx:text><![CDATA[All asset links are recorded here for trader research and digital rights management:
+]]></mx:text>
+					</mx:TextArea>
+				</mx:Canvas>
+				<mx:Canvas label="Prospectus" width="100%" height="100%">
+					<mx:Accordion x="0" y="10" width="237" height="234">
+						<mx:Canvas label="Proposal" width="100%" height="100%">
+							<mx:TextArea x="0" y="-3" width="235" height="131" text="Lip sorum iptorum unum dorian gross mark. Togencia genshi endaylo. Aprtheid gone death over we will see the comming of Christ Yeshua, Son of the one true YHWH. pRAISE BE HIS NAME!&#xa;"/>
+							<mx:Button x="66.5" y="94" label="See Proposal"/>
+						</mx:Canvas>
+						<mx:Canvas label="Valuations" width="100%" height="100%">
+							<mx:Button x="66" y="94" label="See Valuations"/>
+							<mx:LineChart x="84" y="0" id="linechart1" height="76" width="151">
+								<mx:series>
+									<mx:LineSeries displayName="Series 1" yField=""/>
+								</mx:series>
+							</mx:LineChart>
+							<mx:Legend dataProvider="{linechart1}"/>
+						</mx:Canvas>
+						<mx:Canvas label="Collateral" width="100%" height="100%">
+							<mx:Button x="63.5" y="94" label="See Collateral"/>
+							<mx:BarChart x="83" y="1" id="barchart1" width="152" height="95">
+								<mx:series>
+									<mx:BarSeries displayName="Series 1" xField=""/>
+								</mx:series>
+							</mx:BarChart>
+							<mx:Legend dataProvider="{barchart1}" width="84" height="56"/>
+						</mx:Canvas>
+						<mx:Canvas label="Risk" width="100%" height="100%" x="6" y="73">
+							<mx:TextArea x="-0.5" y="0" width="235.5" height="128" text="Lip sorum iptorum unum dorian gross mark. Togencia genshi endaylo. Aprtheid gone death over we will see the comming of Christ Yeshua, Son of the one true YHWH. pRAISE BE HIS NAME!&#xa;"/>
+							<mx:Button x="81.5" y="94" label="See Risk"/>
+						</mx:Canvas>
+						<mx:Canvas label="Diversification" width="100%" height="100%">
+							<mx:Button x="47.5" y="94" label="See Diversification"/>
+							<mx:PieChart x="93" y="0" id="piechart1" width="142" height="86">
+								<mx:series>
+									<mx:PieSeries displayName="Series 1" field=""/>
+								</mx:series>
+							</mx:PieChart>
+							<mx:Legend dataProvider="{piechart1}"/>
+						</mx:Canvas>
+					</mx:Accordion>
+				</mx:Canvas>
+			</mx:TabNavigator>
+			<mx:PopUpMenuButton x="10" y="76" label="BID" width="63"/>
+			<mx:ControlBar>
+					<mx:Spacer width="100%"/>	
+					<mx:Button label="Compliance"/>
+			</mx:ControlBar>	
+			</mx:Panel>
+		</mx:HBox>
+		<mx:HBox id="vault" label="Vault">	
+			<mx:Panel title="KNIRV Vault" status="$PayPal Status" width="298" height="640" layout="absolute" 
+				roundedBottomCorners="true" cornerRadius="20" alpha=".9">
+				<mx:DataGrid x="10" y="37" width="258" height="142">
+					<mx:columns>
+						<mx:DataGridColumn headerText="RTU Name" dataField="col1"/>
+						<mx:DataGridColumn headerText="Grade" dataField="col2"/>
+						<mx:DataGridColumn headerText="$Equity" dataField="col3"/>
+					</mx:columns>
+				</mx:DataGrid>
+			<mx:Label x="10" y="9" text="My Royalty Vault:"/>
+			<mx:Button x="186" y="7" label="Transfer"/>
+			<mx:Text x="10" y="187" text="Selected RTU:"/>
+			<mx:PopUpButton x="210" y="185" label="ASK"/>
+				<mx:ControlBar width="288" x="0" height="33">
+					<mx:Spacer width="100%"/>	
+					<mx:Button label="Compliance"/>
+			</mx:ControlBar>		
+				<mx:TabNavigator x="10" y="219" width="249" height="344">
+					<mx:Canvas label="Alerts" width="100%" height="100%">
+					</mx:Canvas>
+					<mx:Canvas label="EPK" width="100%" height="100%">
+						<mx:DataGrid x="10" y="99" width="237" height="151">
+							<mx:columns>
+								<mx:DataGridColumn headerText="Description" dataField="col1"/>
+								<mx:DataGridColumn headerText="Site" dataField="col2"/>
+							</mx:columns>
+						</mx:DataGrid>
+						<mx:TextArea x="10" y="10" width="227" height="81">
+							<mx:text><![CDATA[All asset links are recorded here for trader research and digital rights management:
+]]></mx:text>
+						</mx:TextArea>
+					</mx:Canvas>
+					<mx:Canvas label="Prospectus" width="100%" height="100%">
+						<mx:Accordion x="0" y="10" width="237" height="234">
+							<mx:Canvas label="Proposal" width="100%" height="100%">
+								<mx:TextArea x="0" y="-3" width="235" height="131" text="Lip sorum iptorum unum dorian gross mark. Togencia genshi endaylo. Aprtheid gone death over we will see the comming of Christ Yeshua, Son of the one true YHWH. pRAISE BE HIS NAME!&#xa;"/>
+								<mx:Button x="66.5" y="94" label="See Proposal"/>
+							</mx:Canvas>
+							<mx:Canvas label="Valuations" width="100%" height="100%">
+								<mx:Button x="66" y="94" label="See Valuations"/>
+								<mx:LineChart x="84" y="0" id="linechart0" height="76" width="151">
+									<mx:series>
+										<mx:LineSeries displayName="Series 1" yField=""/>
+									</mx:series>
+								</mx:LineChart>
+								<mx:Legend dataProvider="{linechart0}"/>
+							</mx:Canvas>
+							<mx:Canvas label="Collateral" width="100%" height="100%">
+								<mx:Button x="63.5" y="94" label="See Collateral"/>
+								<mx:BarChart x="83" y="1" id="barchart0" width="152" height="95">
+									<mx:series>
+										<mx:BarSeries displayName="Series 1" xField=""/>
+									</mx:series>
+								</mx:BarChart>
+								<mx:Legend dataProvider="{barchart0}" width="84" height="56"/>
+							</mx:Canvas>
+							<mx:Canvas label="Risk" width="100%" height="100%" x="6" y="73">
+								<mx:TextArea x="-0.5" y="0" width="235.5" height="128" text="Lip sorum iptorum unum dorian gross mark. Togencia genshi endaylo. Aprtheid gone death over we will see the comming of Christ Yeshua, Son of the one true YHWH. pRAISE BE HIS NAME!&#xa;"/>
+								<mx:Button x="81.5" y="94" label="See Risk"/>
+							</mx:Canvas>
+							<mx:Canvas label="Diversification" width="100%" height="100%">
+								<mx:Button x="47.5" y="94" label="See Diversification"/>
+								<mx:PieChart x="93" y="0" id="piechart0" width="142" height="86">
+									<mx:series>
+										<mx:PieSeries displayName="Series 1" field=""/>
+									</mx:series>
+								</mx:PieChart>
+								<mx:Legend dataProvider="{piechart0}"/>
+							</mx:Canvas>
+						</mx:Accordion>
+					</mx:Canvas>
+				</mx:TabNavigator>
+			</mx:Panel>
+		</mx:HBox>
+		<mx:Canvas label="Guide" width="100%" height="100%" id="Guide">
+			<mx:Panel title="KNIRV Guide" status="User Rank" x="0" y="0" width="298" height="473" layout="absolute" 
+				roundedBottomCorners="true" cornerRadius="20" alpha=".9">
+			<mx:VideoDisplay x="10" y="10" width="258" height="179"/>
+			<mx:TextArea x="10" y="197" width="258" height="186"/>
+			<mx:ControlBar>
+					<mx:Spacer width="100%"/>	
+					<mx:Button label="My Profile"/>
+			</mx:ControlBar>	
+			</mx:Panel>
+		</mx:Canvas>
+		<mx:Canvas label="Site" width="100%" height="100%">
+			<mx:Panel title="KNIRV Site" status="Network Status" x="0" y="0" width="298" height="326" layout="absolute" 
+				roundedBottomCorners="true" cornerRadius="20" alpha=".9">
+			<mx:Button x="182" y="20" label="Home"/>
+			<mx:Button x="182" y="52" label="Forum"/>
+			<mx:Button x="182" y="84" label="Academy"/>
+			<mx:Button x="182" y="116" label="News"/>
+			<mx:Button x="182" y="148" label="Support"/>
+			<mx:Image x="10" y="180" width="258" height="56"/>
+			<mx:TextArea x="10" y="11" height="161" width="164"/>
+			<mx:SWFLoader x="20" y="20" width="144" height="142"/>
+			<mx:Label x="182" y="0" text="Navigation:"/>
+			<mx:ControlBar>
+					<mx:Button label="Register"/>
+					<mx:Spacer width="100%"/>	
+			</mx:ControlBar>	
+			</mx:Panel>
+		</mx:Canvas>
+		</mx:ViewStack>
+	</mx:VBox>
+</mx:Application>
+

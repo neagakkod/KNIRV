@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" themeColor="#5EAA34" backgroundGradientAlphas="[1.0, 1.0]" backgroundGradientColors="[#719E53, #C3F3A6]" color="#757572" fontFamily="Verdana" fontSize="12">
+	<mx:Panel title="KNIRV Login" status="user status" x="103" y="79" width="288" height="159" layout="absolute" 
+		roundedBottomCorners="true" cornerRadius="20" alpha=".9">
+		<mx:Label x="10" y="10" text="Login ID:"/>
+		<mx:TextInput x="90" y="8" width="151"/>
+		<mx:TextInput x="90" y="38" width="151"/>
+		<mx:Label x="10" y="40" text="Password:"/>
+	<mx:ControlBar>
+			<mx:Button label="Register"/>
+			<mx:Spacer width="100%"/>	
+			<mx:Button label="Login"/>
+	</mx:ControlBar>	
+	</mx:Panel>
+</mx:Application>
